@@ -53,7 +53,7 @@ class UserService {
                 throw {error: 'No user with the corresponding token exists'};
             }
             return user.id;
-        } catch (error) {
+        } catch(error) {
             console.log("Somethig went wrong in the auth process");
             throw error;        
         }

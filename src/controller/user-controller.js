@@ -43,6 +43,7 @@ const signIn = async(req, res) => {
             success: false
         });
     }
+}
 
 const isAuthenticated = async (req, res) => {
     try {
@@ -65,7 +66,10 @@ const isAuthenticated = async (req, res) => {
         
     }
 }
-}
+
+
+
+
 
 module.exports = {
     create,
