@@ -69,7 +69,7 @@ class UserService {
 
     verifyToken(token) {
         try {
-            const response = jwt.verify(user, JWT_KEY, {expiresIn: '1h'});
+            const response = jwt.verify(token, JWT_KEY);
             return response;
         } catch (error) {
             console.log("Something went wrong in token creation");
@@ -82,6 +82,16 @@ class UserService {
         } catch (error) {
             console.log("Something went wrong in password encryption");
             throw error;
+        }
+    }
+
+    isAdmin(userId) {
+        try {
+            return this.userRepository.isAdmin(userId);
+        } catch (error) {
+            console.log("Something went wrong in service layer");
+          
+           throw error; 
         }
     }
 }
